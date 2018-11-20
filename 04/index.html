@@ -3,11 +3,30 @@
 <head>
   <meta charset="utf-8">
 	<title>Ejercicio 04</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../_assets/js/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="../_assets/css/style.css">
 </head>
 <body>
   <button class="add_name">+</button>
   <ul class="names"></ul>
 
+  <script>
+    //1.- Click al botón add_name guardar variable el prompt()
+    //2.- append tag '.names', <li>, <span> recibida desde el prompt(), link con clase remove_name
+    $(".add_name").on("click", function(){
+      var name = prompt("Dame tu nombre: ");
+      $("ul").append('<li class="names"><span>'+name+'</span><button type="button" class="remove_name">Remove</button></li>');
+    });
+    //3.- los links vacíos click no aparezca en la URL el signo '#'.
+    $("a[href='#']").on('click', function(e){
+      e.preventDefault();
+    });
+    //4.- función click remove_name y seleccionará li método remove()
+    $(".remove_name").on('click', function(){
+      $(this).parent().remove();
+    });
+
+  </script>
 </body>
 </html>

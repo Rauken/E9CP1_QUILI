@@ -3,7 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Ejercicio 03</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../_assets/js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="../_assets/css/style.css">
+</head>
 <body>
 
 	<nav class="navbar">
@@ -21,6 +24,17 @@
 			<li><a href="#">link 9</a></li>
 		</ul>
 	</nav>
+
+	<script>
+	  //1. - El 4to <li> y por un append agrega:'<ul><li><a href="#">link 4.a</a></li></ul>'
+		$("li").eq(3).append('<ul><li><a href="#">link 4.a</a></li></ul>');
+		//2. - Misma selección anterior inserta, usando un before: '<li><a href="#">link 3.5</a></li>'
+		$("li").eq(3).before('<li><a href="#">link 3.5</a></li>');
+		//3. - El <li> 6 usar prepend: '😎'
+		$("li").eq(7).prepend('😎');
+	  //4. - El <li> 6 usar after: '😊'
+		$("li").eq(7).after('😊');
+	</script>
 
 </body>
 </html>

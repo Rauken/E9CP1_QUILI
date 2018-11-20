@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<title>Ejercicio 02</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../_assets/js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="../_assets/css/style.css">
 </head>
 <body>
 	<header class="header__main">
@@ -19,6 +21,7 @@
 			</ul>
 		</nav>
 	</header>
+
 	<article class="article">
 		<header class="article__header">
 			<h2 class="article__title">Lorem ipsum dolor sit amet, consectetur adipisicing</h2>
@@ -109,8 +112,20 @@
 			<p class="article__text-footer">Laboriosam dolorem explicabo, consequatur, unde dolores eligendi deserunt mollitia consectetur numquam. Quam doloribus omnis eius saepe perspiciatis natus reprehenderit, blanditiis ad quidem, corporis quisquam laboriosam dolores optio? Nam, quis, odio?</p>
 		</footer>
 	</article>
+
 	<footer class="footer__main">
 		<p class="footer__legal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus sint praesentium laboriosam atque placeat architecto, maxime temporibus sequi veniam quae culpa accusantium dignissimos natus perferendis mollitia quam optio incidunt. Esse!</p>
 	</footer>
+	<script>
+		// 1. - Cambiar el ultimo link del 3er articulo a 'Pinterest' y llevar a la pagina correcta
+		$(".article").eq("3").find('li').last().html('<a href="http://pinterest.com">Pinterest</a>');
+		// 2. - Todos los links con # deben llevar al inicio
+		$("a[href='#']").on('click', function(e){
+			e.preventDefault();
+			})
+		// 3. - Todos los hijos de h2 directos de header__main duplican su tamaño
+		$(".header__main").children('h2').css('font-size', '3em');
+	</script>
+
 </body>
 </html>
